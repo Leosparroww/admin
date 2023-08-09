@@ -1,8 +1,7 @@
 # admin
 
-build command laravel
-
-<span>php artisan serve </span>
+<h2>build command laravel</h2>
+<p>php artisan serve </p>
 
 <h2> For css</h2>
-npm run dev
+<p>npm run dev</p>
