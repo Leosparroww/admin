@@ -1,6 +1,7 @@
 <h2>build command</h2>
 
-php artisan serve 
+<div>php artisan serve </div>
+
 npm run dev
 
 
