@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,6 +14,8 @@ class ItemController extends Controller
     //main page
     public function item()
     {
+        Artisan::call('storage:link');
+
         $item = Item::where('categories.publish', 1)->select('items.*', 'categories.name as categoryName')
             ->leftJoin('categories', 'categories.id', 'items.category_id')
             ->paginate('10');

@@ -12,6 +12,7 @@ class CategoryController extends Controller
 {
     public function category()
     {
+
         $category = Category::paginate('10');
         return view('category.categoryList', compact('category'));
     }
