@@ -13,7 +13,7 @@ class RouteController extends Controller
         $category = Category::paginate('6');
         $categoryCount = count($category);
         for ($i = 0; $i < $categoryCount; $i++) {
-            $file = ('https://admin-5thd.vercel.app/storage/image/' . $category[$i]['image']);
+            $file = ('http://localhost:8000/storage/image/' . $category[$i]['image']);
             $category[$i]['image'] = $file;
         }
         return response()->json($category, 200);
@@ -36,7 +36,7 @@ class RouteController extends Controller
 
         $productCount = count($product);
         for ($i = 0; $i < $productCount; $i++) {
-            $file = ('https: //admin-5thd.vercel.app/storage/image/' . $product[$i]['image']);
+            $file = ('http://localhost:8000/storage/image/' . $product[$i]['image']);
             $product[$i]['image'] = $file;
         }
 
