@@ -9,9 +9,7 @@
         "dest": "/api/index.php"
     }],
 
-  "rewrites": [
-    { "source": "/public/index.php", "destination": "/api" }
-  ],
+ 
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
