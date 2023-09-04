@@ -11,7 +11,7 @@ return [
     | by the framework. The "local" disk, as well as a variety of cloud
     | based disks are available to your application. Just store away!
     |
-    */
+     */
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
@@ -26,10 +26,18 @@ return [
     |
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
-    */
+     */
 
     'disks' => [
 
+        'google' => [
+            'driver' => 'google',
+            'clientId' => env('1013025605510-ugriqkenhgm4tcngh8s285aipo9lpapn.apps.googleusercontent.com'),
+            'clientSecret' => env('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'),
+            'refreshToken' => env('1//04rVwxlKF43HRCgYIARAAGAQSNwF-L9Irr7gkE6OSfeakarp9vxmq4asT3FPhrhQjgXEE9kU2wOpsB_oBL_lJT0_YkNd7e_7D7eA'),
+            'folder' => env('1QS-hnu5iiarz14CkrGDqlgd5O0GNkbbh'), // without folder is root of drive or team drive
+            //'teamDriveId' => env('GOOGLE_DRIVE_TEAM_DRIVE_ID'),
+        ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
@@ -39,7 +47,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -50,6 +58,7 @@ return [
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
+            'root' => 'laravel1',
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
@@ -67,7 +76,7 @@ return [
     | `storage:link` Artisan command is executed. The array keys should be
     | the locations of the links and the values should be their targets.
     |
-    */
+     */
 
     'links' => [
         public_path('storage') => storage_path('app/public'),

@@ -34,6 +34,7 @@ class ItemController extends Controller
         $this->itemValidation($request);
         $file = $request->file('image');
         $filename = uniqid() . '_' . $file->getClientOriginalName();
+        $file->storeAs('image/', $filename, 's3');
         $file->storeAs('public/image', $filename);
         $data = $this->itemData($request);
         $data['image'] = $filename;
